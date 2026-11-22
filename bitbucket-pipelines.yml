@@ -1,0 +1,24 @@
+image: node:22
+
+pipelines:
+  default:
+    - step:
+        name: Build and Test
+        caches:
+          - node
+        script:
+          - npm install
+          - npm test
+
+    - step:
+        name: Deploy to Staging
+        deployment: staging
+        script:
+          - echo "Staging deployment successful!"
+
+    - step:
+        name: Deploy to Production
+        deployment: production
+        trigger: manual
+        script:
+          - echo "Production deployment successful!"
