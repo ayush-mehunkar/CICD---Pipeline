@@ -3,5 +3,5 @@ const assert = require('node:assert');
 const add = require('./app');
 
 test('add(2, 3) should return 5', () => {
-    assert.strictEqual(add(2, 3), 6);
+    assert.strictEqual(add(2, 3), 5);
 });
